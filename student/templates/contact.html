@@ -1,0 +1,54 @@
+ {% extends 'mainbase.html' %}
+ {% block title %}Contact Us{% endblock title %}
+ {% block content %}
+ {% if out == 1 %}
+ <div class="alert alert-dark container text-center col-6"role="alert">
+    hii {{name}},we will contact you later.....
+ </div>
+ {% endif %}
+ <div class="container d-flex">
+    <div class="container w-25 mr-5">
+        <h3 class="text-danger">Contact Us</h3>
+       <p class="text-muted">Call us on:</p>
+       <p>Call:+91 8281 223 344</p>
+       <p class="text-muted">Email us at:</p>
+       <p>Enquiry:exceleducation@gmail.com</p>
+       <p>Placement Call:hrexcel@gmail.com</p>
+       <p class="text-muted">Connect us on:</p>
+       <p>Whatsapp</p>
+       <p class="text-muted">Locate us on:</p>
+       <p>Google Map</p>
+    </div>
+    <div class="container ml-5">
+        <h5>How can we be of assistance?</h5>
+        <p>
+         if you require clarifications on any of the courses or the admission process,we are happy to help</p>   
+        <form action="" method="POST">
+    {% csrf_token %}
+    <div class="row mb-3">
+        <label for="name"class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text"class="form-control"id="name"name="name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="email"class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email"class="form-control"id="email"name="email">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="phno"class="col-sm-2 col-form-label">Phone number</label>
+        <div class="col-sm-10">
+            <input type="number"class="form-control"id="phno"name="phno">
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+    <button type="submit"class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</div>
+</div>
+{% endblock content %}
+                
+                

@@ -1,0 +1,70 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>signup</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </head>
+  
+    <body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Ts1oosWaP4Ul9NTNz1FdW37nBLWCLYQ9Lw&usqp=CAU');
+     height: 500px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; ">
+
+<nav class="navbar navbar-light bg-dark">
+    <h3 class="text-light text-center">EXCEL EDUCATIONAL INSTITUTE</h3>
+    
+  </nav>
+        <span class="border border-secondary"></span>
+        <div class="d-flex justify-content-center">
+
+            <div style="margin-top:50px;padding:40px;border-radius:20px"class="btn btn-dark">
+                <div class="mainblock">
+                    <div class="btn btn-dark"> 
+                        <!-- <button class="btn btn-danger mr-4" id="edit">Edit Student</button> -->
+                        
+                    </div>
+                </div>
+           
+            <div class="set2">
+                <div class="main">
+                    <div style="margin-top:10px"class="heading">           
+            <h2>Edit Student</h2>
+                </div>
+    
+
+        <form action="" method="post">
+            {% csrf_token %} {% for i in forms %}
+           
+            <div style="padding:5px">
+                <input id="name" name="student_name" type="text"  placeholder="{{i.student_name}}">
+            </div>
+            <div style="padding:5px">
+                <input id="email" name="student_email" type="email"  placeholder="{{i.student_email}}">
+            </div>
+            <div style="padding:5px">
+                <input id="ph" name="student_phone" type="text"  placeholder="{{i.student_phone}}">
+            </div>
+            <div style="padding:5px">
+                <input id="add" name="student_address" type="text"   placeholder="{{i.student_address}}">
+            </div>
+            <div style="padding:5px">
+                <input id="place" name="student_place" type="text" placeholder="{{i.student_place}}">
+                
+            </div>
+            <div style="width:50px;text-align:center;padding:20px;margin-left:45px">
+                <button type="submit" class="d-flex justify-content-center;btn btn-danger"style="width:100px;text-align:center">Edit</button>
+        
+            
+            </div>
+        
+        </form>
+        </div>
+        </div>
+        {% endfor %}

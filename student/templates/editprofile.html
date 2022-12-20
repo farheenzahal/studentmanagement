@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock title %}
+{% block content %}
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Ts1oosWaP4Ul9NTNz1FdW37nBLWCLYQ9Lw&usqp=CAU');
+height: 500px; 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; ">
+<div class="card text-center">
+    <div class="card-header">
+        <h1 class="text-center">Edit Profile</h1>
+</div>
+<div class="card-body">
+    <form action="" method="POST" class="container">
+        {% for message in messages %}
+        <h5 class="text-center text-danger">{{message}}</h5>
+        {% endfor %}
+    <div>
+        {% csrf_token %} {%for i in forms %}
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Name</span> 
+            <input type="text" aria-label="Name" class="form-control" name="name" placeholder="{{i.name}}">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Phone Number</span> 
+            <input type="text" aria-label="Name" class="form-control" name="phno" placeholder="{{i.phno}}">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Email</span> 
+            <input type="text" aria-label="Name" class="form-control" name="email" placeholder="{{i.email}}">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Password</span> 
+            <input type="text" aria-label="Name" class="form-control" name="password" placeholder="{{i.password}}">
+        </div>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-center">
+            <input type="submit" value="edit" class="btn-primary text-light w-25">
+        </div>
+    </div>
+        </form>
+        {% endfor %}
+        </form>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

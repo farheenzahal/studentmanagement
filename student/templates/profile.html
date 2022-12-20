@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock title %}
+{% block content %}
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Ts1oosWaP4Ul9NTNz1FdW37nBLWCLYQ9Lw&usqp=CAU');
+height: 500px; 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; ">
+<div class="card text-center">
+    <div class="card-header">
+        <h1 class="text-center">My Profile</h1>
+</div>
+<div class="card-body container">
+    <div>
+        {%for i in customer%}
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Name</span> 
+            <span class="form-control">{{i.name}}</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Phone Number</span> 
+            <span class="form-control">{{i.phno}}</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark text-secondary w-25">Email</span> 
+            <span class="form-control">{{i.email}}</span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="card-footer text-muted d-flex justify-content-end">
+    <a href="{%url 'editprofile'%} "class="btn-primary">Edit Profile</a>
+</div>
+</div>
+
+{% endblock content %}

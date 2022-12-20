@@ -1,0 +1,20 @@
+{% extends 'mainbase.html'%}
+{% block title%}
+<h1 class="text-center">Our Course</h1>
+<hr>
+{% endblock %}
+{% block content %}
+<div class="d-flex">
+{% for c in course %}
+<div class= "" style="height:60vh;width:100vh">
+   
+    <div class="card-body ">
+      <p class="card-text"><h2>{{c.name}}</h2>
+        <p>{{c.description}}</p>
+        <p>{{c.duration}} years</p>
+    <p>{{c.fee}}</p>
+    </div>
+
+    
+ {% endfor %}   
+ {% endblock content %}
